@@ -3,6 +3,7 @@ ja:
   activerecord:
     models:
       event: イベント
+      ticket: チケット
     attributes:
       event:
         name: 名前
@@ -10,6 +11,8 @@ ja:
         start_time: 開始時間
         end_time: 終了時間
         content: 内容
+      ticket:
+        comment: コメント
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
