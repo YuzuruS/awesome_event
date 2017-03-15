@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
 
-  resources :events do
-    resources :tickets
+  resources :events, except: :index do
+    resources :tickets, only: [:new, :create, :destroy]
   end
 
-  resource :user do
+  match '*path' => 'application#error404', via: :all
+
+  resource :user, only: :destroy do
     get 'retire'
   end
 
