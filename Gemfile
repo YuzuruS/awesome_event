@@ -42,5 +42,13 @@ gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-twitter', '~> 1.0.1'
 gem 'dotenv-rails'
 
+# for paginate
 gem 'kaminari', '~> 0.15.1'
 gem 'kaminari-bootstrap', '~> 3.0.1'
+
+# for search
+gem 'ransack', '~> 1.2.2'
+
+# for uploading images
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 3.7.0'

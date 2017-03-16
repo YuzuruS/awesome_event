@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  mount_uploader :event_image, EventImageUploader
+
   belongs_to :owner, class_name: 'User'
   has_many :tickets, dependent: :destroy
 
@@ -12,6 +14,14 @@ class Event < ActiveRecord::Base
   def created_by?(user)
     return false unless user
     owner_id == user.id
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w(name start_time)
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
   end
 
   private
