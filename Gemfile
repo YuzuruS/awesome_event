@@ -55,4 +55,6 @@ gem 'mini_magick', '~> 3.7.0'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~>2.6.0'
+  gem 'factory_girl_rails', '~>4.4.1'
 end
